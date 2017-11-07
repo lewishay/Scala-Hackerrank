@@ -1,8 +1,6 @@
 import scala.collection.mutable.ArrayBuffer
 
-// This object returns the number of squares on a n x n chess board that a Queen can move to, given the positions of
-// k number of obstacles
-// There is currently no error handling. All inputs are assumed to be valid.
+// See https://www.hackerrank.com/challenges/queens-attack-2/problem for a description of this problem.
 object QueenAttack {
 
   def main(args: Array[String]) {
