@@ -20,16 +20,8 @@ object KaprekarNumbers {
     squared match {
       case _ if squared.equals("1") => true
       case _ if squared.length < 2 => false
-      case _ => splitterCheck(squared, n)
-    }
-  }
-
-  def splitterCheck(s: String, n: Int): Boolean = {
-    s match {
-      case _ if s.length % 2 == 0 =>
-        if(s.substring(0, s.length/2).toInt + s.substring(s.length/2).toInt == n) true else false
-      case _ =>
-        if(s.substring(0, s.length/2).toInt + s.substring(s.length/2).toInt == n) true else false
+      case _ => if(squared.substring(0, squared.length/2).toInt +
+        squared.substring(squared.length/2).toInt == n) true else false
     }
   }
 }
