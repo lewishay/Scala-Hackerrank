@@ -1,3 +1,5 @@
+package algorithms.implementation
+
 import scala.collection.mutable.ArrayBuffer
 
 // See https://www.hackerrank.com/challenges/queens-attack-2/problem for a description of this problem.

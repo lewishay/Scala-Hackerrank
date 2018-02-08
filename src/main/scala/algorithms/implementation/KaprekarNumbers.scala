@@ -1,3 +1,5 @@
+package algorithms.implementation
+
 // See https://www.hackerrank.com/challenges/kaprekar-numbers/problem for a description of this problem
 
 object KaprekarNumbers {

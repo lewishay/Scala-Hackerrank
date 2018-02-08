@@ -1,3 +1,5 @@
+package algorithms.implementation
+
 import scala.collection.mutable.ArrayBuffer
 
 // See https://www.hackerrank.com/challenges/encryption/problem for a description of this problem.

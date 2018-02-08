@@ -1,3 +1,5 @@
+package algorithms.implementation
+
 // See https://www.hackerrank.com/challenges/bigger-is-greater/problem for a description of this problem
 
 object BiggerIsGreater {

@@ -1,3 +1,5 @@
+package algorithms.implementation
+
 // See https://www.hackerrank.com/challenges/acm-icpc-team/problem for a description of this problem.
 
 object AcmIcpcTeam {
