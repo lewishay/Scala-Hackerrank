@@ -1,6 +1,7 @@
 package algorithms.implementation
 
 // See https://www.hackerrank.com/challenges/cavity-map/problem for a description of this problem.
+
 object CavityMap {
 
   def main(args: Array[String]) {
