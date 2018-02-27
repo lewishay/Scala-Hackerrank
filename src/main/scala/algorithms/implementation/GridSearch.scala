@@ -36,7 +36,6 @@ object GridSearch {
       pattern(i) = nextLine
     }
     val result = gridSearch(grid, pattern)
-    grid.foreach(println(_))
     println(result)
   }
 
