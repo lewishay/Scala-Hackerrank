@@ -8,9 +8,8 @@ object GithubCommits {
     val branch = "master"
     val url = s"https://github.com/$repoOwner/$repo/commits/$branch.atom"
     val source = io.Source.fromURL(url)
-    val text = source.getLines.map(_.trim).mkString("#sep#")
-    val xmlAsList = text.split("#sep#").toList
-    val rawCommits = getCommits(xmlAsList)
+    val xml = source.getLines.map(_.trim).toList
+    val rawCommits = getCommits(xml)
 
     cleanCommits(rawCommits, repo, branch)
   }
