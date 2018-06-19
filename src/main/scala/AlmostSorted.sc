@@ -4,34 +4,47 @@ def isSorted(seq: Seq[Int], previousNum: Int = 0): Boolean = {
   }
 }
 
-def swapElem(seq: Seq[Int], indexCount: Int = 0): String = {
-  if(seq.lengthCompare(1) == 0) "fail" else {
-    val (first, second) = (seq.head, seq(1))
-    if(first > second) {
-      val newList = Seq(second, first) ++ seq.drop(2)
-      if(isSorted(newList)) {
-        s"$indexCount ${indexCount + 1}"
-      } else swapElem(seq.tail, indexCount + 1)
-    } else swapElem(seq.tail, indexCount + 1)
-  }
+def swapElem(seq: Seq[Int], leftIndex: Int, rightIndex: Int): Seq[Int] =
+  seq.patch(leftIndex, Seq(seq(rightIndex)), 1).patch(rightIndex, Seq(seq(leftIndex)), 1)
+
+def reverseSection(seq: Seq[Int], leftIndex: Int, rightIndex: Int): Seq[Int] = {
+  val sectionToReverse = seq.slice(leftIndex, rightIndex).reverse
+  seq.take(leftIndex) ++ sectionToReverse ++ seq.drop(rightIndex)
 }
 
-def reverseSection(seq: Seq[Int], indexCount: Int = 0, reversing: Boolean = false): String = {
-  (seq.lengthCompare(1) == 0) "fail" else {
-    val (first, second) = (seq.head, seq(1))
-    if(first > second) {
+def getIndexLeft(seq: Seq[Int], indexCount: Int = 0): Option[Int] = seq match {
+  case Seq(int1, int2) =>
+    if(int2 < int1) Some(indexCount) else None
+  case Seq(int1, int2, _*) if int2 < int1 => Some(indexCount)
+  case _ => getIndexLeft(seq.tail, indexCount + 1)
+}
 
-    } else reverseSection(seq.tail, indexCount + 1, reversing)
-  }
+def getIndexRight(seq: Seq[Int], indexCount: Int = 0): Option[Int] = seq match {
+  case Seq(int1, int2) =>
+    if(int2 > int1) Some(indexCount) else None
+  case Seq(int1, int2, _*) if int2 > int1 => Some(indexCount)
+  case _ => getIndexRight(seq.tail, indexCount + 1)
 }
 
 def almostSorted(seq: Seq[Int]): String = {
   if(isSorted(seq)) "yes" else {
-    val swapResult = swapElem(seq)
-    if(swapResult != "fail") s"yes\nswap $swapResult" else {
-      val reverseResult = reverseSection(seq)
-      if(reverseResult != "fail") s"yes\nreverse $reverseResult" else "no"
+    val leftIndex = getIndexLeft(seq)
+    val rightIndex = getIndexRight(seq.reverse).map(seq.length - _)
+    (leftIndex, rightIndex) match {
+      case (Some(lIndex), Some(rIndex)) =>
+        println(s"L: $lIndex, R: $rIndex")
+        if(isSorted(swapElem(seq, lIndex, rIndex))) {
+          s"yes\nswap ${lIndex + 1} $rIndex"
+        } else if(isSorted(reverseSection(seq, lIndex, rIndex))) {
+          s"yes\nreverse ${lIndex + 1} $rIndex"
+        } else {
+          "no"
+        }
+      case _ => "no"
     }
   }
 }
 
+almostSorted(Seq(4, 2))
+
+//Current state: index out of bounds when the right index is the last element
