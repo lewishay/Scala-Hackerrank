@@ -1,9 +1,11 @@
 package algorithms.implementation
 
+import scala.annotation.tailrec
+
 // See https://www.hackerrank.com/challenges/larrys-array/problem for a description of this problem.
 
 object LarrysArray {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Please enter the number of elements in the array:")
     val n = sc.nextInt()
@@ -18,6 +20,7 @@ object LarrysArray {
 
   def larrysArray(a: Array[Int]): String = {
     val sorted = a.sorted // the Array sort is outside of the recursive function to aid performance
+    @tailrec
     def recFunc(arr: Array[Int], currentNum: Int = 1): String = arr match {
       case _ if arr.sameElements(sorted.drop(currentNum - 1)) => "YES"
       case _ if arr.head == currentNum => recFunc(arr.tail, currentNum + 1)

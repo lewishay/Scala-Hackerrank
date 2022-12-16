@@ -4,7 +4,7 @@ package algorithms.implementation
 
 object CavityMap {
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Please enter the size of the grid:")
     val n = sc.nextInt()

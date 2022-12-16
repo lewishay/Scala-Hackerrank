@@ -1,9 +1,11 @@
 package algorithms.implementation
 
+import scala.annotation.tailrec
+
 // See https://www.hackerrank.com/challenges/bomber-man/problem for a description of this problem.
 
 object Bomberman {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     // Row and column size as well as the grid contents have been set to static values here to avoid input inconsistencies
     val r = 10
@@ -39,6 +41,7 @@ object Bomberman {
     result.map(_.replace('O', 'X').replace('.', 'O').replace('X', '.'))
   }
 
+  @tailrec
   def vertBombUpdate(grid: Array[String], rowNums: (Int, Int) = (0, 1)): Array[String] = rowNums match {
     case _ if rowNums._2 == grid.length => grid
     case _ =>
@@ -57,6 +60,7 @@ object Bomberman {
       vertBombUpdate(grid, (rowNums._1 + 1, rowNums._2 + 1))
   }
 
+  @tailrec
   def getIndexes(row: String, indexes: List[Int] = List(), counter: Int = 0): List[Int] = counter match {
     case _ if counter == row.length => indexes
     case _ =>
@@ -72,6 +76,7 @@ object Bomberman {
     val last = length - 1
     val secondToLast = length - 2
 
+    @tailrec
     def recReplace(row: String, counter: Int = 0): String = {
       row.charAt(counter) match {
         case _ if counter == length => row

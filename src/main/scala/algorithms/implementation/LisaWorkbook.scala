@@ -1,10 +1,12 @@
 package algorithms.implementation
 
+import scala.annotation.tailrec
+
 // See https://www.hackerrank.com/challenges/lisa-workbook/problem for a description of this problem
 
 object LisaWorkbook {
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Enter the number of chapters:")
     val n = sc.nextInt()
@@ -19,6 +21,7 @@ object LisaWorkbook {
     println(s"The number of special chapters is: $result")
   }
 
+  @tailrec
   def workbook(k: Int, list: List[Int], currentPage: Int = 1, numSpecials: Int = 0): Int = {
     if(list.isEmpty) {
       numSpecials
@@ -28,6 +31,7 @@ object LisaWorkbook {
     }
   }
 
+  @tailrec
   def isSpecial(k: Int, currentPage: Int, numChapters: Int, chapterCount: Int = 1, numSpecial: Int = 0): Int = {
     if(numChapters < k) {
       val specials = if((chapterCount until chapterCount + numChapters).contains(currentPage)) 1 else 0
@@ -38,6 +42,7 @@ object LisaWorkbook {
     }
   }
 
+  @tailrec
   def pagesNeeded(chapters: Int, k: Int, pages: Int = 0): Int = chapters match {
     case 0 => pages
     case _ if chapters < k => pages + 1

@@ -1,5 +1,7 @@
 package algorithms.implementation
 
+import scala.annotation.tailrec
+
 // See https://www.hackerrank.com/challenges/bigger-is-greater/problem for a description of this problem
 
 object BiggerIsGreater {
@@ -16,6 +18,7 @@ object BiggerIsGreater {
     if(charPos == 0) "no answer" else swapAndSort(s, charPos - 1)
   }
 
+  @tailrec
   def checkIfGreaterList(s: String, n: Int): Int = n match {
     case _ if n == s.length => n
     case _ => if(s.charAt(n) < s.charAt(n - 1)) n else checkIfGreaterList(s, n + 1)

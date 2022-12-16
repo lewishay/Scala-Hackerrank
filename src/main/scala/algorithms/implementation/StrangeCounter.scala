@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/strange-code/problem for a description of this problem.
 
 object StrangeCounter {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Please enter the number:")
     val t = sc.nextLong()

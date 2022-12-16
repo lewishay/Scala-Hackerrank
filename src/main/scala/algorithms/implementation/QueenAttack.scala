@@ -6,7 +6,7 @@ import scala.collection.mutable.ArrayBuffer
 
 object QueenAttack {
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner (System.in)
     println("Enter the size of the board:")
     val n = sc.nextInt()

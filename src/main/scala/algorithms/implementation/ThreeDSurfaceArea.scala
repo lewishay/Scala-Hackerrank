@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/3d-surface-area/problem for a description of this problem.
 
 object ThreeDSurfaceArea {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Enter the height of the grid:")
     val height = sc.nextInt()
