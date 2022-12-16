@@ -1,5 +1,7 @@
 package algorithms.implementation
 
+import scala.collection.mutable
+
 // See https://www.hackerrank.com/challenges/acm-icpc-team/problem for a description of this problem.
 
 object AcmIcpcTeam {
@@ -7,7 +9,6 @@ object AcmIcpcTeam {
   def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner (System.in)
     val n = sc.nextInt()
-    val m = sc.nextInt()
     val topic = new Array[String](n)
     for(i <- 0 until n) {
       topic(i) = sc.next()
@@ -30,7 +31,7 @@ object AcmIcpcTeam {
   }
 
   def merger(s1: String, s2: String): String = {
-    val result = new StringBuilder(s2)
+    val result = new mutable.StringBuilder(s2)
     for(i <- s1.indices) {
       if(s1.charAt(i).equals('1')) result.setCharAt(i, '1')
     }

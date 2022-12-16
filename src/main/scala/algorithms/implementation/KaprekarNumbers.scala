@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/kaprekar-numbers/problem for a description of this problem
 
 object KaprekarNumbers {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Enter the first number:")
     val p = sc.nextInt()

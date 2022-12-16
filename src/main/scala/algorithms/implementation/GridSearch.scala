@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/the-grid-search/problem for a description of this problem.
 
 object GridSearch {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Enter number of grid rows:")
     val gridRows = sc.nextInt()

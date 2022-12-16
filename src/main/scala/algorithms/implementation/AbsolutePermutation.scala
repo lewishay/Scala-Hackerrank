@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/absolute-permutation/problem for a description of this problem.
 
 object AbsolutePermutation {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Please enter the value of N, which defines the list of all natural numbers [1 to N]:")
     val n = sc.nextInt()

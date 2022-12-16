@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/the-time-in-words/problem for a description of this problem
 
 object TimeInWords {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     println("Enter the hour:")
     val h = sc.nextInt()

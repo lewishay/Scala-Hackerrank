@@ -3,7 +3,7 @@ package algorithms.implementation
 // See https://www.hackerrank.com/challenges/magic-square-forming/problem for a description of this problem.
 
 object MagicSquare {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val sc = new java.util.Scanner(System.in)
     val s = Array.ofDim[Int](3,3)
     println("Enter your square, one number at a time:")
