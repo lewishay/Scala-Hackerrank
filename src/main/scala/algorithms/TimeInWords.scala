@@ -1,4 +1,4 @@
-package algorithms.implementation
+package algorithms
 
 // See https://www.hackerrank.com/challenges/the-time-in-words/problem for a description of this problem
 

@@ -1,4 +1,4 @@
-package algorithms.implementation
+package algorithms
 
 import scala.annotation.tailrec
 

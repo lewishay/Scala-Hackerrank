@@ -1,4 +1,4 @@
-package algorithms.implementation
+package algorithms
 
 // See https://www.hackerrank.com/challenges/magic-square-forming/problem for a description of this problem.
 

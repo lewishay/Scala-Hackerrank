@@ -3,7 +3,7 @@ package functional
 import java.util.Scanner
 import scala.collection.mutable
 
-//https://www.hackerrank.com/challenges/functions-or-not/problem
+// https://www.hackerrank.com/challenges/functions-or-not/problem
 
 object FunctionsOrNot {
 
@@ -28,7 +28,7 @@ object FunctionsOrNot {
           if (functionalPairs(pair._1) != pair._2) answer = "NO"
         }
       }
-      
+
       println(answer)
     }
   }
